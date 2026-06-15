@@ -1,4 +1,4 @@
-# multi-as-bgp-ospf-lab
+# Multi-as-bgp-ospf-lab
 Multi-AS BGP and OSPF routing lab implemented in GNS3 using Cisco IOS routers.
 ## Overview
 
