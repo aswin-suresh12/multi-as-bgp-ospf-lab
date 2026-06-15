@@ -50,6 +50,10 @@ neighbor 3.3.3.3 next-hop-self
 neighbor 4.4.4.4 next-hop-self
 ```
 
+### OSPF DR Election Observation
+
+R2 initially became the DR because OSPF was enabled on R2 before R3 joined the segment. Since OSPF DR elections are non-preemptive, R3 did not automatically take over the DR role despite having a higher Router ID (3.3.3.3). After clearing the OSPF process and triggering a fresh election, R3 was elected DR and R2 became BDR.
+
 ## Verification
 
 Successful connectivity:
