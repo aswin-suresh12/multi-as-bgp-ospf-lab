@@ -21,8 +21,7 @@ This project demonstrates a multi-AS routing design using Cisco IOS routers in G
 - Network Troubleshooting
 
 ## Topology
-
-
+<img width="864" height="557" alt="BGP LAB PNG" src="https://github.com/user-attachments/assets/c9a3c20d-9961-40df-9dd9-c3a1d7a13afb" />
 
 ## Key Objectives
 
