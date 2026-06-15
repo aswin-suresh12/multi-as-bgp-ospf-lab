@@ -61,4 +61,20 @@ R1 → R2 → R3 → R4 → R5
 PC2 (192.168.1.10)
 ```
 
+PC1> ping 192.168.1.10
+84 bytes from 192.168.1.10 icmp_seq=1 ttl=59 time=153.352 ms
+84 bytes from 192.168.1.10 icmp_seq=2 ttl=59 time=165.428 ms
+84 bytes from 192.168.1.10 icmp_seq=3 ttl=59 time=154.451 ms
+84 bytes from 192.168.1.10 icmp_seq=4 ttl=59 time=153.163 ms
+84 bytes from 192.168.1.10 icmp_seq=5 ttl=59 time=138.242 ms
+
+PC1> trace 192.168.1.10
+trace to 192.168.1.10, 8 hops max, press Ctrl+C to stop
+ 1   10.1.1.1   10.729 ms  16.056 ms  15.156 ms
+ 2   20.1.1.30   46.105 ms  46.129 ms  46.600 ms
+ 3   30.1.1.20   76.204 ms  76.851 ms  60.999 ms
+ 4   50.1.1.20   108.469 ms  106.822 ms  106.875 ms
+ 5   100.1.1.30   136.616 ms  138.946 ms  138.542 ms
+ 6   *192.168.1.10   140.216 ms (ICMP type:3, code:3, Destination port unreachable) (Higher UDP )
+
 Ping and traceroute verification completed successfully.
