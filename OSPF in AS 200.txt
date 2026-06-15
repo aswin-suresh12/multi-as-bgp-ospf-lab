@@ -1,0 +1,40 @@
+OSPF in AS 200 
+
+On R2 :
+
+OSPF (AS 200) || Area 0 || Process Id 1
+
+R2(config)#router ospf 1
+R2(config-router)#router-id 2.2.2.2
+R2(config-router)#network 30.1.1.0 0.0.0.255 are
+R2(config-router)#network 30.1.1.0 0.0.0.255 area 0
+R2(config-router)#network 2.2.2.2 0.0.0.0 area 0
+R2(config-router)#exit
+
+On R3 :
+
+OSPF (AS 200) || Area 0 || Process Id 1
+
+R3(config)#router ospf 1
+R3(config-router)#router-id 3.3.3.3
+R3(config-router)#network 30.1.1.0 0.0.0.255 area 0
+R3(config-router)#network 50.1.1.0 0.0.0.255 area 0
+R3(config-router)#network 3.3.3.3 0.0.0.0 area 0
+R3(config-router)#exit
+
+On R4 :
+
+OSPF (AS 200) || Area 0 || Process Id 1
+
+R4(config)#router ospf 1
+R4(config-router)#router-id 4.4.4.4
+R4(config-router)#network 50.1.1.0 0.0.0.255 area 0
+R4(config-router)#network 100.1.1.0 0.0.0.255 area 0
+R4(config-router)#network 3.3.3.3 0.0.0.0 area 0
+R4(config-router)#exit
+
+On R2 :
+
+Clear ip Ospf process (As ospf neighbour election is pre-emptive R2 will act as the DR in the R2---R3 segment even though R3 has the highest router ID. Interface priority is same for all interfaces)
+
+

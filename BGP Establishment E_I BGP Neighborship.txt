@@ -1,0 +1,27 @@
+R1 ---- R2  EBGP Neighborship:
+
+R1(config)#router bgp 100
+R1(config-router)#neighbor 20.1.1.30 remote-as 200
+R1(config-router)#network 10.1.1.0 mask 255.255.255.0
+R1(config-router)#exit
+R1(config)#exit
+
+R2(config)#router bgp 200
+R2(config-router)#neighbor 20.1.1.10 remote-as 100
+R2(config-router)#exit
+R2(config)#end
+
+R4 ---- R5  EBGP Neighborship:
+
+R5(config)#router bgp 300
+R5(config-router)#neighbor 100.1.1.20
+R5(config-router)#neighbor 100.1.1.20 remote-as 200
+R5(config-router)#network 192.168.1.0 mask 255.255.255.0
+R5(config-router)#exit
+
+R4(config)#router bgp 200
+R4(config-router)#neighbor 100.1.1.30 remote
+R4(config-router)#neighbor 100.1.1.30 remote-as 300
+R4(config-router)#exit
+
+
