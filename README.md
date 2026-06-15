@@ -35,7 +35,7 @@ This project demonstrates a multi-AS routing design using Cisco IOS routers in G
 
 ### Issue
 
-Route 10.1.1.0/24 appeared in the BGP table but was not installed into the routing table.
+Route 10.1.1.0/24 appeared in the BGP table but was not installed into the routing table in R4.
 
 ### Root Cause
 
@@ -43,7 +43,7 @@ The BGP next-hop attribute pointed to an unreachable address.
 
 ### Resolution
 
-Configured:
+On R2 Configured:
 
 ```cisco
 neighbor 3.3.3.3 next-hop-self
